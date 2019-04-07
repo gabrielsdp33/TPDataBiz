@@ -18,9 +18,9 @@ namespace TPDataBizHackathon.Domain.Services
             _repositoryBase = repositoryBase;
         }
         
-        public int TesteScript()
+        public string[] getNavio()
         {
-            return _repositoryBase.TesteScript();
+            return _repositoryBase.getNavio();
         }
 
         public List<string[]> getFuncionarios()

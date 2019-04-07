@@ -9,7 +9,7 @@ namespace TPDataBizHackathon.Domain.Interfaces.IServices
 {
     public interface IServiceBase
     {
-        int TesteScript();
+        string[] getNavio();
 
         List<string[]> getFuncionarios();
 

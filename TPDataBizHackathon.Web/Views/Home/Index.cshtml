@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<string>
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -40,6 +41,9 @@
                         <div class="col-md-3">
                             <button class="btn btn-primary btn-lg btn-block" type="submit">Consult</button>
                         </div>
+                        <div class="col-md-4">
+                            <label><strong id="idstrong">@Model.FirstOrDefault(x => int.Parse(x) > 0)</strong></label>
+                        </div>
                        
 
                     </div>
@@ -50,6 +54,11 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    //$(document).ready(function () {
+    //    if($("#idstrong") > )
+    //})
+</script>
 @*<div class="jumbotron">
         <h1>BTP:CODE - TPDataBiz</h1>
         @* <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>

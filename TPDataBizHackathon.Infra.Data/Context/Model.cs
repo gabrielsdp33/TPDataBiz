@@ -22,7 +22,7 @@ namespace TPDataBizHackathon.Infra.Data.Context
 
         }
 
-        public int getNavios()
+        public string[] getNavios()
         {
             _sqlConnection.Open();
 
@@ -31,12 +31,12 @@ namespace TPDataBizHackathon.Infra.Data.Context
             using (SqlDataReader rdr = cmd.ExecuteReader())
             {
                 // iterate through results, printing each to console
-                int count = 0;
-                while (rdr.Read())
-                {
-                    count++;
-                }
-                return count;
+                //int count = 0;
+                //while (rdr.Read())
+                //{
+                    
+                //}
+                return (string[])rdr["per_catraso"];
             }
         }
 

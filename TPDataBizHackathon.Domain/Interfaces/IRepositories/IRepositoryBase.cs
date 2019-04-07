@@ -9,7 +9,7 @@ namespace TPDataBizHackathon.Domain.Interfaces.IRepositories
 {
     public interface IRepositoryBase
     {
-        int TesteScript();
+        string[] getNavio();
         List<string[]> getFuncionarios();
         string getAcuracia();
     }

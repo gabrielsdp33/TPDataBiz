@@ -27,7 +27,7 @@ namespace BulkCopyCSV.Infra.Data.Repository
         }
 
        
-        public int TesteScript()
+        public string[] getNavio()
         {
            return _model.getNavios();   
         }

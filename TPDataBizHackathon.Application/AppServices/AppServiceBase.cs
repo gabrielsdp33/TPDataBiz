@@ -17,9 +17,9 @@ namespace TPDataBizHackathon.Application.AppServices
             _serviceBase = serviceBase;
         }
 
-        public int TesteScript()
+        public string[] getNavio()
         {
-            return _serviceBase.TesteScript();
+            return _serviceBase.getNavio();
         }
 
         public List<string[]> getFuncionarios()

@@ -8,7 +8,7 @@ namespace TPDataBizHackathon.Application.IAppServices
 {
     public interface IAppServiceBase
     {
-        int TesteScript();
+        string[] getNavio();
 
         List<string[]> getFuncionarios();
 

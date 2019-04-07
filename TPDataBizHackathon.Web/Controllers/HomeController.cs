@@ -6,15 +6,26 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using TPDataBizHackathon.Application.IAppServices;
+using TPDataBizHackathon.Infra.IoC;
 
 namespace TPDataBizHackathon.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private IAppServiceBase _appServiceBase;
+
+        public HomeController()
+        {
+            BootStrapper.Start();
+            _appServiceBase = BootStrapper.container.GetInstance<IAppServiceBase>();
+        }
+
         public ActionResult Index()
         {
+            List<string> model = _appServiceBase.getNavio().ToList<string>();
 
-            return View();
+            return View(model);
         }
 
         public ActionResult About()
