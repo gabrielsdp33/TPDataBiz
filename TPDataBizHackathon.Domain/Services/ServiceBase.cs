@@ -27,5 +27,10 @@ namespace TPDataBizHackathon.Domain.Services
         {
             return _repositoryBase.getFuncionarios();
         }
+
+        public string getAcuracia()
+        {
+            return _repositoryBase.getAcuracia();
+        }
     }
 }

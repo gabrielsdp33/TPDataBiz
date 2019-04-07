@@ -36,5 +36,9 @@ namespace BulkCopyCSV.Infra.Data.Repository
         {
             return _model.getFuncionarios();
         } 
+        public string getAcuracia()
+        {
+            return _model.getAcuracia();
+        }
     }
 }

@@ -26,5 +26,10 @@ namespace TPDataBizHackathon.Application.AppServices
         {
             return _serviceBase.getFuncionarios();
         }
+
+        public string getAcuracia()
+        {
+            return _serviceBase.getAcuracia();
+        }
     }
 }

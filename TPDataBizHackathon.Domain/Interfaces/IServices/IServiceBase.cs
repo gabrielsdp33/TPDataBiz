@@ -13,5 +13,7 @@ namespace TPDataBizHackathon.Domain.Interfaces.IServices
 
         List<string[]> getFuncionarios();
 
+        string getAcuracia();
+
     }
 }
