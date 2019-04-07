@@ -1,0 +1,39 @@
+﻿@{
+    var diaSemana = ViewBag.diaSemana;
+}
+
+<link href="~/css/mycss/ClimaTempo/semana.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="~/js/myjs/ClimaTempo/semana.js" type="text/javascript"></script>
+
+<div class="col-md-12">
+    <div class="row marginBottomDiv">
+        <div class="hoje">
+            <h3 id="today">@diaSemana</h3>
+            <span id="descriptionHoje">description</span>
+
+            <div class="temperatura">
+                <span id="tempMaxHoje" class="fontTempMax">10</span> <sup class="fontTempMax">o</sup> <span class="fontTempMax marginRightSpanTemp">C</span>
+                <span id="tempMinHoje"> 5</span> <sup>o</sup> <span>C</span>
+            </div>
+
+            <div class="iconeTempo">
+                <img id="imgTempHoje" src="~/images/ClimaTempo/icons/icon-1.svg" width="100">
+            </div>
+
+            <div class="detalhes">
+                <img src="~/images/ClimaTempo/icon-umberella.png">
+                <span id="rainProbabilityHoje">0 %</span>
+
+                <img src="~/images/ClimaTempo/icon-wind.png">
+                <span id="windVelocityMaxHoje">0 km/h</span>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row align-items-center" id="listWeek">
+        <!--listagem da semana -->
+    </div>
+</div>
+
