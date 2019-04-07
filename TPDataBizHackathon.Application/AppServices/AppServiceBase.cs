@@ -21,5 +21,10 @@ namespace TPDataBizHackathon.Application.AppServices
         {
             return _serviceBase.TesteScript();
         }
+
+        public List<string[]> getFuncionarios()
+        {
+            return _serviceBase.getFuncionarios();
+        }
     }
 }

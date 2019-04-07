@@ -15,12 +15,12 @@ namespace TPDataBizHackathon.Web.Controllers
             return View();
         }
 
-        public JsonResult getTabua()
-        {
-            TabuaMareAPI tabuaMareApi = new TabuaMareAPI();
-            List<TabuaMare> tabuaMare = tabuaMareApi.getTabuaMare();
+        //public JsonResult getTabua()
+        //{
+        //    TabuaMareAPI tabuaMareApi = new TabuaMareAPI();
+        //    List<TabuaMare> tabuaMare = tabuaMareApi.getTabuaMare();
 
-            return Json(tabuaMare);
-        }
+        //    return Json(tabuaMare);
+        //}
     }
 }

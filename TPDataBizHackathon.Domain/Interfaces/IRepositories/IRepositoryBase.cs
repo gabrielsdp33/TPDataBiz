@@ -10,5 +10,6 @@ namespace TPDataBizHackathon.Domain.Interfaces.IRepositories
     public interface IRepositoryBase
     {
         int TesteScript();
+        List<string[]> getFuncionarios();
     }
 }

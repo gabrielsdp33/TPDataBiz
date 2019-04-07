@@ -1,0 +1,48 @@
+﻿@model List<TPDataBizHackathon.Web.ViewModel.FuncionarioViewModel>
+@{
+    ViewBag.Title = "View";
+}
+
+<div class="col-md-12">
+
+    <table class="col-md-12">
+        <thead>
+            <tr>
+                <td>
+                    Funcionario
+                </td>
+                <td>
+                    Cargo
+                </td>
+                <td>
+                    Cursos
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var funcionario in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => funcionario.Nome);
+                    </td>
+                
+                    <td>
+                        @Html.DisplayFor(modelItem => funcionario.Cargo);
+                    </td>
+                
+                    <td>
+                        <select class="input-lg" style="">
+                            <option value="0" >Selecione
+                            </option>
+                            <option value="1">NR_1</option>
+                            <option value="2">NR_2</option>
+                            <option value="3">NR_3</option>
+                            <option value="4">NR_4</option>
+                        </select>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

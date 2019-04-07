@@ -43,9 +43,10 @@ namespace teste
             //}
             BootStrapper.Start();
             _appServiceBase = BootStrapper.container.GetInstance<IAppServiceBase>();
-            int i = _appServiceBase.TesteScript();
+            List<string[]> list = _appServiceBase.getFuncionarios();
 
-            Console.WriteLine(i);
+            foreach(var item in list)
+                Console.WriteLine(item);
         }
     }
 }

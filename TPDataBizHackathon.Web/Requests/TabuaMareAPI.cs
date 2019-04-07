@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
+using System.Xml;
 using TPDataBizHackathon.Web.Models;
 using TPDataBizHackathon.Web.Utils;
 
@@ -11,30 +14,51 @@ namespace TPDataBizHackathon.Web.Requests
 {
     public class TabuaMareAPI : RequestAPI
     {
+        private HttpClient _client;
+
         public TabuaMareAPI() : base("http://servicos.cptec.inpe.br/")
         {
+            _client = new HttpClient();
+
         }
 
-        public override Task<string> sendGetRequisiton(string url = "XML/cidade/4748/todos/tempos/ondas.xml")
+        public override Task<string> sendGetRequisiton(string url = "http://servicos.cptec.inpe.br/XML/cidade/7dias/4748/previsao.xml")
         {
             return base.sendGetRequisiton(url);
         }
 
-        public List<TabuaMare> getTabuaMare()
-        {
-            List<TabuaMare> listTabuaMare = new List<TabuaMare>();
+        //public Task<string> getTabuaMare(string url = "http://servicos.cptec.inpe.br/XML/cidade/7dias/4748/previsao.xml")
+        //{
 
-            try
-            {
-                string response = sendGetRequisiton().Result;
-                listTabuaMare = TabuaMareXMLReader.XmlToListTabuaMare(response);
-            }
-            catch (Exception e)
-            {
-                Debug.Write(e.Message);
-            }
+        //    XmlDocument doc = (XmlDocument)_client.GetAsync(url);
+        //    doc.Load(doc)
+        //    return base.sendGetRequisiton(url);
+        //}
 
-            return listTabuaMare;
-        }
+        //public async Task<List<TabuaMare>> getTabuaMare()
+        //{
+        //    //List<TabuaMare> listTabuaMare = new List<TabuaMare>();
+
+            
+        //    try
+        //    {
+        //        string url = "http://servicos.cptec.inpe.br/XML/cidade/7dias/4748/previsao.xml";
+
+        //        HttpResponseMessage response = await _client.GetAsync(url);
+        //        List<TabuaMare> listTabuaMare = TabuaMareXMLReader.XmlToListTabuaMare(response.Content.ToString());
+
+        //        return listTabuaMare;
+        //    }
+
+        //    catch (Exception e)
+        //    {
+        //        Debug.Write(e.Message);
+        //    }
+            
+
+        //    //return listTabuaMare;
+        //}
+
+        
     }
 }

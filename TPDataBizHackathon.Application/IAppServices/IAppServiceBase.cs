@@ -10,6 +10,7 @@ namespace TPDataBizHackathon.Application.IAppServices
     {
         int TesteScript();
 
+        List<string[]> getFuncionarios();
 
     }
 }

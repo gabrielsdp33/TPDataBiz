@@ -23,7 +23,7 @@ namespace TPDataBizHackathon.Domain.Services
             return _repositoryBase.TesteScript();
         }
 
-        public List<string> getFuncionarios()
+        public List<string[]> getFuncionarios()
         {
             return _repositoryBase.getFuncionarios();
         }

@@ -11,5 +11,7 @@ namespace TPDataBizHackathon.Domain.Interfaces.IServices
     {
         int TesteScript();
 
+        List<string[]> getFuncionarios();
+
     }
 }

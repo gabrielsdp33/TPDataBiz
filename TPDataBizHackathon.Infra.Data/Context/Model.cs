@@ -20,7 +20,7 @@ namespace TPDataBizHackathon.Infra.Data.Context
 
         }
 
-        public int retornaNavios()
+        public int getNavios()
         {
             _sqlConnection.Open();
 
@@ -35,6 +35,30 @@ namespace TPDataBizHackathon.Infra.Data.Context
                     count++;
                 }
                 return count;
+            }
+        }
+
+        public List<string[]> getFuncionarios()
+        {
+            _sqlConnection.Open();
+
+            SqlCommand cmd = new SqlCommand("EXEC retorna_funcionario", _sqlConnection);
+
+            using (SqlDataReader rdr = cmd.ExecuteReader())
+            {
+                // iterate through results, printing each to console
+                List<string[]> listaFuncionarios = new List<string[]>();
+                int cont = 0;
+                while (rdr.Read() && cont<10)
+                {
+                    string[] s = new string[2];
+                    s[0] = rdr[0].ToString();
+                    s[1] = rdr[3].ToString();
+
+                    listaFuncionarios.Add(s);
+                    cont++;
+                }
+                return listaFuncionarios;
             }
         }
     }

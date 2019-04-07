@@ -29,7 +29,12 @@ namespace BulkCopyCSV.Infra.Data.Repository
        
         public int TesteScript()
         {
-           return _model.retornaNavios();   
+           return _model.getNavios();   
         }
+
+        public List<string[]> getFuncionarios()
+        {
+            return _model.getFuncionarios();
+        } 
     }
 }

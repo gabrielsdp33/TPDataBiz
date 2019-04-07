@@ -4,60 +4,105 @@
 
 
 
-
-
-<div class="jumbotron">
-    <h1>BTP:CODE - TPDataBiz</h1>
-       @* <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+<div class="bg-light">
+    <div class="container">
+        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h2>Registro de Navio</h2>
+        @*<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra, justo vitae accumsan iaculis, est nunc vestibulum enim, vel egestas velit dui ac massa. Mauris hendrerit orci ac fringilla facilisis. Nullam condimentum tempor massa porttitor finibus. In urna lacus, vulputate eu lobortis bibendum, tempus eu felis. Proin vel purus risus. Aliquam et metus vitae nunc ultricies bibendum vel eget turpis. Cras non malesuada purus, vel convallis nulla. Nullam volutpat congue erat quis luctus.</p>*@
     </div>
+    <div class="container">
+        <div class="row">
 
-<div class="row">
+            <div class="col-md-12 order-md-1">
+                <form class="needs-validation">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="nameShip">Nome do Navio</label>
+                            <input type="text" class="form-control" id="nameShip">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="lastName">Número de Contêineres</label>
+                            <input type="text" class="form-control" id="numberOfContainers">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="anchorForecast" type="date">Previsão de Atracação</label>
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker1'>
+                                    <input type='text' class="form-control" />
+                                    @*<span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>*@
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <hr class="col-md-12 mb-4">
+                        <div class="col-md-3">
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">Consult</button>
+                        </div>
+                       
 
-    <div>
-        <label class="label" style="color:black"><strong>Data: </strong></label>
-        <input type="text" name="date" id="date" />
-        <button type="button" class="btn" id="btnConsultarClimaTempo" name="btnConsultarClimaTempo">Clima</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
     </div>
-    
 </div>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        
+@*<div class="jumbotron">
+        <h1>BTP:CODE - TPDataBiz</h1>
+        @* <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+            <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
 
-       
-        $("#btnConsultarClimaTempo").click(function () {
-            debugger;
+    <div class="row">
 
-            const TOKEN = '9f37d38446d66bdd2d4e310cbe910cf7'
-            const ID_CITY = '3675'
-            const _URLBASE = 'https://apiadvisor.climatempo.com.br/api/'
-            //var _urlComplete = `${_URLBASE}v1/forecast/locale/${ID_CITY}/days/15?token=${TOKEN}`
-            var _urlComplete = "http://192.168.28.70:7500/climate";
+        <div>
+            <label class="label" style="color:black"><strong>Data: </strong></label>
+            <input type="text" name="date" id="date" />
+            <button type="button" class="btn" id="btnConsultarClimaTempo" name="btnConsultarClimaTempo">Clima</button>
+        </div>
 
-            //$.ajax( 
-            //    {
-            //        type: 'POST',
-            //        url: _urlComplete,
-            //        dataType: 'jsonp',
-            //        contentType: 'application/json',
-            //        data: {"date_br" : "06/04/2019"},
-            //        success: function (data) {
-            //            //console.log("oie", json.value);
-            //            debugger;
-            //            alert("Data: " + data);
-            //        }
-            //    });
+    </div>
 
-            $.get(_urlComplete, function (data) {
-                alert("Data: " + data + "\nStatus: " + status);
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+
+            $("#btnConsultarClimaTempo").click(function () {
+                debugger;
+
+                const TOKEN = '9f37d38446d66bdd2d4e310cbe910cf7'
+                const ID_CITY = '3675'
+                const _URLBASE = 'https://apiadvisor.climatempo.com.br/api/'
+                //var _urlComplete = `${_URLBASE}v1/forecast/locale/${ID_CITY}/days/15?token=${TOKEN}`
+                var _urlComplete = "http://192.168.28.70:7500/climate";
+
+                //$.ajax(
+                //    {
+                //        type: 'POST',
+                //        url: _urlComplete,
+                //        dataType: 'jsonp',
+                //        contentType: 'application/json',
+                //        data: {"date_br" : "06/04/2019"},
+                //        success: function (data) {
+                //            //console.log("oie", json.value);
+                //            debugger;
+                //            alert("Data: " + data);
+                //        }
+                //    });
+
+                $.get(_urlComplete, function (data) {
+                    alert("Data: " + data + "\nStatus: " + status);
+                });
+                });
+
+                var url = 'http://192.168.28.70:7500/climate';
+                '@Url.Action("GetClimate", "Home"})';
             });
-            });
 
-            @*var url = 'http://192.168.28.70:7500/climate';
-            '@Url.Action("GetClimate", "Home"})';*@
-        });
-
-</script>
+    </script>*@
 
